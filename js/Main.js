@@ -42,27 +42,33 @@ onload = function () {
     const alphabets = Array.from(document.getElementsByClassName('alphabet'));
 
     alphabets.forEach((a) => {
-        a.addEventListener('touchstart', function () {
+        a.addEventListener('touchstart', function (e) {
+            e.preventDefault();
             inputController.inputAlphabet(a.id);
         });
-        a.addEventListener('mousedown', function () {
+        a.addEventListener('mousedown', function (e) {
+            e.preventDefault();
             inputController.inputAlphabet(a.id);
         });
     })
 
     const del = document.getElementById("delete");
-    del.addEventListener('touchstart', function () {
+    del.addEventListener('touchstart', function (e) {
+        e.preventDefault();
         inputController.inputDelete();
     });
-    del.addEventListener('mousedown', function () {
+    del.addEventListener('mousedown', function (e) {
+        e.preventDefault();
         inputController.inputDelete();
     });
 
     const ent = document.getElementById("enter");
-    ent.addEventListener('touchstart', function () {
+    ent.addEventListener('touchstart', function (e) {
+        e.preventDefault();
         inputController.inputEnter();
     });
-    ent.addEventListener('mousedown', function () {
+    ent.addEventListener('mousedown', function (e) {
+        e.preventDefault();
         inputController.inputEnter();
     });
 
